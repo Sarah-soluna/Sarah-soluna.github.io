@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soluna 황혼의 기록 - 시작되는 신화</title>
+<style>
+  /* 기본 HTML, BODY 스타일 초기화 */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* HTML, BODY가 뷰포트 높이 100%를 차지하도록 */
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    overflow: hidden; /* 전체 페이지 스크롤 방지. .scroll-container에서 스크롤 처리 */
+    background-color: black; /* 페이지 로딩 중 흰색 플래시 방지 */
+  }
+
+  /* 스크롤 컨테이너 스타일 - 메인 스크롤 영역 */
+  .scroll-container {
+    height: 100vh; /* 뷰포트 높이 가득 채우기 */
+    overflow-y: scroll; /* 세로 스크롤 가능하게 설정 */
+    scroll-snap-type: y mandatory; /* 스크롤 시 각 섹션 시작 지점에 자동으로 맞춰짐 */
+    -webkit-overflow-scrolling: touch; /* iOS에서 부드러운 스크롤 */
+    position: relative; /* 자식 요소의 위치 지정을 위해 */
+    width: 100vw; /* 뷰포트 너비 가득 채우기 */
+  }
+
+  /* 각 섹션(화면) 스타일 */
+  .section {
+    height: 100vh; /* 각 섹션이 뷰포트 높이 가득 채우도록 */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    scroll-snap-align: start; /* 섹션 시작 지점에 스냅 */
+    background-size: cover; /* 배경 이미지 크기 조절 */
+    background-position: center; /* 배경 이미지 위치 */
+    background-repeat: no-repeat; /* 배경 이미지 반복 방지 */
+    transition: background-image 0.8s ease-in-out; /* 배경 이미지 전환 시 부드러운 효과 (이미지를 CSS로 교체 시) */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 텍스트 가독성을 위한 그림자 */
+  }
+
+  /* 각 섹션별 배경 이미지 (여기에 제이드가 생성할 이미지 URL을 넣으면 돼!) */
+  .section1 {
+    background-image: url('배경_이미지_URL_1_파란_하늘'); /* 예: https://yourdomain.com/images/blue_sky.jpg */
+    background-color: #36454F; /* 이미지가 없거나 로딩 중일 때 */
+  }
+
+  .section2 {
+    background-image: url('https://t1.daumcdn.net/cafeattach/1XxGo/e5b2d57bfe29023f7f08c0cb9cfc17d243b38860'); /* 예: https://yourdomain.com/images/desert.jpg */
+    background-color: #1a2a3a;
+  }
+
+  .section3 {
+    background-image: url('https://t1.daumcdn.net/cafeattach/1XxGo/ce6e85f12538891d6af1551e2e75b7810bb690fb'); /* 예: https://yourdomain.com/images/oasis_building.jpg */
+    background-color: #2b1f3d;
+  }
+
+  .section4 {
+    background-image: url('https://t1.daumcdn.net/cafeattach/1XxGo/c762ca35bd610df899bcb7fc097a7fa718ccf255'); /* 예: https://yourdomain.com/images/egypt_city_palace.jpg */
+    background-color: #0d1b2a;
+  }
+
+  .section5 {
+    background-image: url('https://t1.daumcdn.net/cafeattach/1XxGo/62016a2c1428cf8adeb1a3f546d8f6f87c4a14ab'); /* 예: https://yourdomain.com/images/egypt_port.jpg */
+    background-color: #3d0a0a; /* 임시 색상 */
+  }
+
+  .section6 {
+    background-image: url('https://t1.daumcdn.net/cafeattach/1XxGo/0b592c4609c4ae07f1a0cfb2f2e36a6a20fdac81'); /* 예: https://yourdomain.com/images/sea.jpg */
+    background-color: #004d40; /* 임시 색상 */
+  }
+
+  .section7 {
+    background-image: url('https://t1.daumcdn.net/cafeattach/1XxGo/dfade6ea0f410abd7e489fc1fe2b94afb6ceaf78'); /* 예: https://yourdomain.com/images/oriental_buildings.jpg */
+    background-color: #4b0082; 
